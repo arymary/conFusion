@@ -34,7 +34,12 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
+                    <!-- Removed data- attribute to use javascript instead.
                     <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login
+                    </a>
+-->
+                    <a id="loginLink">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -90,7 +95,12 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
+                    <!--
                     <a class="btn btn-warning btn-block" role="button" data-toggle="modal" data-target="#ReserveTableModal">
+                    Reserve Table
+                    </a>
+-->
+                    <a class="btn btn-warning btn-block" role="button" id="reserveTableButton">
                     Reserve Table
                     </a>
                 </div>
@@ -98,7 +108,7 @@
         </div>
     </header>
     
-     <div id="ReserveTableModal" class="modal fade" role="dialog">
+     <div id="reserveTableModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -365,6 +375,17 @@
                     $('#carouselButton').children('span').addClass('fa-pause');                    
                 }
             });
+            
+            $('#loginLink').click(function() {
+                $('#loginModal').modal('toggle');
+                
+            });
+            
+            $('#reserveTableButton').click(function() {
+                $('#reserveTableModal').modal('toggle');
+                
+            });
+            
         });
     
     </script>
